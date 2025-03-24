@@ -44,3 +44,17 @@ background-size: cover;
     background-color: green;
     font-size: 5vh;
 }
+
+#inspectButton {
+    position: absolute;
+    margin: 0;
+    padding-left: 0.1em;
+    top: 0;
+    width: 20vw;
+    height: 10vh;
+    border: 0;
+    outline: 0;
+    color: #141414;
+    background-color: rgb(255, 0, 0);
+    font-size: 5vh;
+}
