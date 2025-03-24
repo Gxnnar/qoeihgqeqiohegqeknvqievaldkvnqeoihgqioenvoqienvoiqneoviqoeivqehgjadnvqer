@@ -14,12 +14,46 @@
         </script>
 
         <link rel="stylesheet" href="example.css">
+        <style>
+            /* Ensure the button is visible */
+            #inspectButton {
+                display: block;
+                margin-top: 0px;
+                margin-left: 900px;
+                padding: 10px 15px;
+                font-size: 16px;
+                background-color: #007bff;
+                color: rgb(0, 0, 0);
+                border: none;
+                cursor: pointer;
+            }
+
+            #inspectButton:hover {
+                background-color: #0056b3;
+            }
+        </style>
     </head>
     <body>
         <input type="text" id="urlInput" placeholder="Gxnnars Site: Enter URL here">
         <button id="searchButton">Search</button>
 
         <iframe id="iframeWindow" class="iframeWindow"></iframe>
+
+        <!-- Inspect Element Button -->
+        <button id="inspectButton" onclick="enableInspect()">Open Inspect Element</button>
+
+        <script>
+          function enableInspect() {
+            if (!window.eruda) {
+              let script = document.createElement("script");
+              script.src = "https://cdn.jsdelivr.net/npm/eruda";
+              script.onload = () => eruda.init();
+              document.body.appendChild(script);
+            } else {
+              eruda.show();
+            }
+          }
+        </script>
     </body>
     <script src="example.js"></script>
 </html>
